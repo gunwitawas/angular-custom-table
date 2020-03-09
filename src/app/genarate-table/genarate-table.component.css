@@ -1,43 +1,8 @@
-* {
-  border-radius: 0;
+.solid-0{
+  border: 1px solid transparent;
 }
 
-.solid-0 {
-  border: solid transparent;
-}
-
-.bg-w {
-  background-color: white;
-}
-
-.modal-dialog {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  min-width: 90%;
-  max-height: 94%;
-  left: 5%;
-  right: 5%;
-  top: 3%;
-  bottom: 3%;
-}
-
-.modal-body {
-  max-height: calc(100vh - 15vh);
-  overflow-y: auto;
-}
-
-.btn-yello {
-  background-color: #d3a921;
-  color: white;
-}
-
-.btn-yello:hover {
-  background-color: #a08300;
-  color: white;
-}
-
-.bg-b {
-  background-color: #1E1E1E;
-  color: white;
+.table{
+  border-radius: 5px;
+  bborder: 1px solid transparent;
 }
