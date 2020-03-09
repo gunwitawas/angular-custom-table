@@ -1,0 +1,55 @@
+<div class="row justify-content-md-center mb-5">
+	<div class="col-lg-10 col-lg-offset-2">
+
+		<button class="btn btn-yello m-2" *ngIf="!isGenarateTable" (click)="addFeild()">
+                  add field
+                </button>
+		<button class="btn btn-yello m-2" *ngIf="!isGenarateTable" (click)="addColumn()">
+                  add column
+                </button>
+		<button class="btn btn-yello m-2" *ngIf="!isGenarateTable" (click)="genarateTable()">
+                  genarateTable
+                </button>
+		<button class="btn btn-yello m-2" *ngIf="isGenarateTable" (click)="onEdit()">
+                  edit
+                </button>
+
+		<table class="table table-bordered table-hover bg-w shadow" style="border: 1px solid #1E1E1E;"
+			*ngIf="!isGenarateTable">
+			<thead class="bg-b">
+				<tr>
+					<th *ngFor="let fieldList of customTable.field; let i = index">
+						<input (change)="onKeyin('field', $event, i)" value="{{fieldList}}" type="text"
+                        class="form-control">
+                    </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let columnList of customTable.column; let idFeild = index">
+					<td *ngFor="let column of columnList; let idColumn = index">
+						<input (change)="onKeyin('column', $event, idFeild, idColumn)" value="{{column}}" type="text"
+                        class="form-control">
+                    </td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="table table-bordered table-hover bg-w shadow" style="border: 1px solid #1E1E1E;"
+			*ngIf="isGenarateTable">
+			<thead class="bg-b">
+				<tr>
+					<th *ngFor="let fieldList of customTable.field">
+						{{fieldList}}
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let columnList of customTable.column">
+					<td *ngFor="let column of columnList">
+						{{column}}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

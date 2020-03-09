@@ -6,7 +6,6 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./genarate-table.component.css"]
 })
 export class GenarateTableComponent implements OnInit {
-
   newTable = [];
   isEditTable = true;
   isGenarateTable = false;
