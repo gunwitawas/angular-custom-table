@@ -18,7 +18,7 @@
                 </button> -->
 	</div>
 
-	<table class="table table-dark shadow" style="border: 1px solid #1E1E1E;" *ngIf="!isGenarateTable">
+	<table class="table table-dark shadow" *ngIf="!isGenarateTable">
 		<thead class="bg-b">
 			<tr>
 				<th *ngFor="let fieldList of customTable.field; let i = index" class="solid-0">
@@ -37,8 +37,8 @@
 		</tbody>
 	</table>
 
-	<table class="table table-dark table-hover shadow" style="border: 1px solid #1E1E1E;" *ngIf="isGenarateTable">
-		<thead class="bg-b">
+	<table class="table table-dark table-hover shadow" *ngIf="isGenarateTable">
+		<thead>
 			<tr>
 				<th *ngFor="let fieldList of customTable.field" class="text-warning">
 					{{fieldList}}
