@@ -1,19 +1,21 @@
 <div class="container">
 
-	<button class="btn btn-info m-2" *ngIf="!isGenarateTable" (click)="addFeild()">
+	<div class="row mx-5 my-5 text-center">
+		<button class="btn m-2" style="background-color: #F1FFFA" *ngIf="!isGenarateTable" (click)="addFeild()">
                   add field
                 </button>
-	<button class="btn btn-info m-2" *ngIf="!isGenarateTable" (click)="addColumn()">
+		<button class="btn m-2" style="background-color: #F1FFFA"  *ngIf="!isGenarateTable" (click)="addColumn()">
                   add column
                 </button>
-	<button class="btn btn-success m-2" *ngIf="!isGenarateTable" (click)="genarateTable()">
+		<button class="btn m-2" style="background-color: #93B7BE" *ngIf="!isGenarateTable" (click)="genarateTable()">
                   genarateTable
                 </button>
-	<button class="btn btn-warning m-2" *ngIf="isGenarateTable" (click)="onEdit()">
+		<button class="btn m-2" style="background-color: #D5C7BC" *ngIf="isGenarateTable" (click)="onEdit()">
                   edit
                 </button>
+	</div>
 
-	<table class="table table-bordered table-dark shadow" style="border: 1px solid #1E1E1E;" *ngIf="!isGenarateTable">
+	<table class="table table-dark shadow" style="border: 1px solid #1E1E1E;" *ngIf="!isGenarateTable">
 		<thead class="bg-b">
 			<tr>
 				<th *ngFor="let fieldList of customTable.field; let i = index" class="solid-0">
@@ -26,7 +28,7 @@
 			<tr *ngFor="let columnList of customTable.column; let idFeild = index">
 				<td *ngFor="let column of columnList; let idColumn = index" class="solid-0">
 					<input (change)="onKeyin('column', $event, idFeild, idColumn)" value="{{column}}" type="text"
-                        class="form-control bg-dark text-white-50">
+                        class="form-control bg-dark text-white-50 solid-dark">
                     </td>
 			</tr>
 		</tbody>
@@ -35,7 +37,7 @@
 	<table class="table table-dark table-hover shadow" style="border: 1px solid #1E1E1E;" *ngIf="isGenarateTable">
 		<thead class="bg-b">
 			<tr>
-				<th *ngFor="let fieldList of customTable.field" class="solid-0">
+				<th *ngFor="let fieldList of customTable.field" class="solid-0 text-warning">
 					{{fieldList}}
 				</th>
 			</tr>
