@@ -2,17 +2,20 @@
 
 	<div class="row mx-5 my-5 text-center">
 		<button class="btn m-2" style="background-color: #F1FFFA" *ngIf="!isGenarateTable" (click)="addFeild()">
-                  add field
+                  Add Field
                 </button>
 		<button class="btn m-2" style="background-color: #F1FFFA"  *ngIf="!isGenarateTable" (click)="addColumn()">
-                  add column
+                  Add Column
                 </button>
 		<button class="btn m-2" style="background-color: #93B7BE" *ngIf="!isGenarateTable" (click)="genarateTable()">
-                  genarateTable
+                  Genarate Table
                 </button>
 		<button class="btn m-2" style="background-color: #D5C7BC" *ngIf="isGenarateTable" (click)="onEdit()">
-                  edit
+                  Edit Table
                 </button>
+		<!-- <button class="btn m-2 float-rigth" style="background-color: #FFFFFF" *ngIf="isGenarateTable" (click)="submitTable()">
+                  Save Table
+                </button> -->
 	</div>
 
 	<table class="table table-dark shadow" style="border: 1px solid #1E1E1E;" *ngIf="!isGenarateTable">
@@ -37,7 +40,7 @@
 	<table class="table table-dark table-hover shadow" style="border: 1px solid #1E1E1E;" *ngIf="isGenarateTable">
 		<thead class="bg-b">
 			<tr>
-				<th *ngFor="let fieldList of customTable.field" class="solid-0 text-warning">
+				<th *ngFor="let fieldList of customTable.field" class="text-warning">
 					{{fieldList}}
 				</th>
 			</tr>
@@ -50,4 +53,8 @@
 			</tr>
 		</tbody>
 	</table>
+
+
+	<p *ngIf="isGenarateTable" class="text-white-50">JSON : {{getString()}}</p>
+
 </div>

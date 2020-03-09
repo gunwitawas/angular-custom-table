@@ -9,6 +9,9 @@ export class GenarateTableComponent implements OnInit {
   newTable = [];
   isEditTable = true;
   isGenarateTable = false;
+
+  tableList = [];
+
   public customTable: any = {
     field: [],
     column: [[]]
@@ -57,5 +60,19 @@ export class GenarateTableComponent implements OnInit {
 
   onEdit() {
     this.isGenarateTable = false;
+  }
+
+  // submitTable() {
+  //   this.tableList.push(this.customTable);
+  //   this.isGenarateTable = false;
+  //   this.customTable = {
+  //     field: [],
+  //     column: [[]]
+  //   };
+  // }
+
+  getString() {
+    console.log(JSON.stringify(this.customTable));
+    return JSON.stringify(this.customTable);
   }
 }
